@@ -3,14 +3,68 @@
 
 \subsection{Enunciado}
 
-Verifique que a função y(x) descrita abaixo é derivável, porém sua derivada
-$y'$ não é contínua em $x = 0$
+Verifique que a função f(x) descrita abaixo é derivável, porém sua derivada
+$f'$ não é contínua em $x = 0$
 
 \begin{equation*}
-    y(x) =
+    f(x) =
     \begin{cases}
         x^2\sin{\frac{1}{x}}, \quad x \neq 0 \\
         0, \quad x = 0
     \end{cases}
 \end{equation*}
-\subsection{Resolução}
+
+\subsection{Continuidade em x = 0}
+
+Para que essa função seja contínua em $x = 0$, temos que:
+\[\lim_{x\to0} x\cdot\sin{\frac{1}{x}} = 0\]
+
+Novamente, será utilizada a definição de limite por épsilon-delta para provar a continuidade.
+
+Quer se provar que para todo $\varepsilon > 0$, existe um $\delta > 0$ tal que, se
+$0 < |x - 0| < \delta$, então $|f(x) - 0| < \varepsilon$.
+\begin{enumerate}
+    \item Seja $\varepsilon > 0$ um número real positivo qualquer
+    \item Precisamos encontrar um $\delta > 0$ correspondente. Analisando a expressão $|f(x) - 0|$, temos:
+    \[|f(x) - 0| = x\cdot\sin{\frac{1}{x}} = |x|\cdot\sin{\frac{1}{x}}\]
+    \item Sabemos que a função seno é limitada, uma vez que, para qualquer valor de $\theta$, temos que
+    $\sin{theta} \leq 1$. Portanto:
+    \[\sin{\frac{1}{x}} \leq 1\]
+    \item Substituindo essa desigualdde na expressão, obtemos:
+    \[|x|\cdot\sin{\frac{1}{x}} \leq |x|\cdot1 = |x|\]
+    \item Já foi mostrado que $|f(x) - 0| \leq |x|$. Portanto, se também garantirmos que
+    $|x| \leq \varepsilon$, obteremos nossa prova.
+    \item Podemos então escolher $\delta = \varepsilon$. Assim, assumindo que $0 < |x| < \delta$, temos
+    que $|x| < \varepsilon$
+    E como $|f(x)-0| \leq |x|$, concluimos que:
+    \[|f(x)-0 < \varepsilon\]
+\end{enumerate}
+
+Portanto, o limite existe e é 0. Como $\lim_{x\to0}f(x) = 0$ e $f(0) = 0$, conclui-se que a função
+é contínua em $x = 0$.
+
+\subsection{Derivabilidade em x = 0}
+
+Para verificar se a função é derivável em $x = 0$, basta calcular o valor de sua derivada, a partir
+da definição de limite:
+\[f'(0) = \lim_{h\to0} \frac{f(0 + h) - f(0)}{h}\]
+
+Substituindo os valores na função, a expressão se torna:
+
+\begin{align*}
+    f'(0) &= \lim_{h\to0} \frac{h\cdot\sin{\frac{1}{h}} - 0}{h} \\
+    f'(0) &= \lim_{h\to0} \frac{h\cdot\sin{\frac{1}{h}}}{h} \\
+    f'(0) &= \lim_{h\to0}\sin{\frac{1}{h}}
+\end{align*}
+
+De forma análoga ao item anterior, novamente há a ocorrência do limite da forma $\lim_{x\to0} \sin{1}{x}$,
+que não existe. Dessa forma, conclui-se que a função não é derivável em $x = 0$.
+
+\subsection{Gráfico da função}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{src/ex22}
+    \caption{Gráfico de f(x)}
+\end{figure}
+
