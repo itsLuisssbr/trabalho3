@@ -1,0 +1,65 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{{images/}}
+\usepackage[brazilian]{babel}
+\usepackage[a4paper, left=30mm, right=20mm, top=30mm, bottom=20mm]{geometry}
+\usepackage{float} % pra conseguir usar o \begin{figure}[H]
+\usepackage{indentfirst} % pra fazer tab n 1 paragrafos dos capitulos
+% package pra tabela
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{subfiles}
+\usepackage{derivative}
+
+\usepackage{amsmath} % para escrever fracoes "bonitinhas" kkkk
+\usepackage{amssymb} % para aquelas letras bonitas de conjuntos
+
+\title{
+	Resumo de Cálculo I - MAT2453
+}
+
+\author{
+	Alunos:
+	\\  
+	\\ 
+	\\ 
+	\\ 
+	\\ 
+	\\ 
+	\\ 
+	\\ \\
+	Grupo: Filhos de Turing
+	\\ Professor: Odilson Otavio Luciano
+}
+
+\date{\today}
+
+\begin{document}
+
+	\maketitle
+	\thispagestyle{empty}
+	\newpage
+
+	\section{Item 1}
+
+	\subfile{chapters/item1}
+
+	\section{Item 2}
+
+	\subfile{chapters/item2}
+
+	\section{Item 3}
+
+	\subfile{chapters/item3}
+
+	\section{Item 4}
+
+	\subfile{chapters/item4}
+
+	\section{Item 5}
+
+	\subfile{chapters/item5}
+
+
+
+\end{document}

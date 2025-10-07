@@ -1,0 +1,43 @@
+
+
+\subsection{Enunciado}
+
+Verifique que a função f(x), descrita abaixo, é contínua, porém não derivável em $x = 0$.
+
+\begin{equation*}
+    f(x) = 
+    \begin{cases}
+        x\sin{x}, \quad x \neq 0 \\
+        0, \quad x = 0
+    \end{cases}
+\end{equation*}
+
+\subsection{Continuidade em x = 0}
+
+Para verificar a continuidade em $x = 0$, é necessário provar que $\lim_{x\to0}f(x) = f(0)$, ou seja, 
+é necessário mostrar que:
+
+\begin{equation*}
+    \lim_{x\to0}x\cdot\sin{\frac{1}{x}} = 0
+\end{equation*}
+
+% segunda parte - prova 
+
+\subsection{Prova pela Definição (Épsilon-Delta)}
+
+Quer se provar que para todo $\varepsilon > 0$, existe um $\delta > 0$ tal que, se $0 < |x-0| < \delta$, então:
+$|f(x) - o < \varepsilon$
+
+\begin{enumerate}
+    \item Seja $\varepsilon > 0$ um número real positivo qualquer
+    \item Precisamos encontrar um $\delta > 0$ correspondente. Para isso, vamos analisar
+    a expressão $|f(x) - 0|$.
+    \[|f(x) - 0| = |x|\cdot\sin{\frac{1}{x}}\] 
+    \item Sabe-se que a função seno é limitada, uma vez que, para qualquer
+    valor de $\theta$, temos que $|\sin{\theta}| \leq 1$, portanto, $\sin{\frac{1}{x} \leq 1}$
+    \item substituindo essa desigualdade na nossa expressão, obtemos
+    \[|x|\cdot\sin{\frac{1}{x}} \leq |x|\cdot1 = |x|\]
+    \item O nosso objetico é fazer com que $|f(x) - 0 < \varepsilon$. Já foi mostrado que
+    $|f(x) - 0| \leq |x|$. Para isso, basta garantir que $|x| < \varepsilon$
+    \item 
+\end{enumerate}
