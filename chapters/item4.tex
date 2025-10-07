@@ -2,4 +2,78 @@
 
 \subsection{Enunciado}
 
-\subsection{Resolução}
+Verifique que a função f(x), descrita abaixo é derivável, que sua derivada é derivável, e assim por
+diante. A nomenclatura para esse caso é que f é da classe $C^\infty$
+
+\subsection{Derivabilidade para $x \neq 0$}
+
+Para qualquer $x \neq 0$, a função $|x|$ é derivável. A função $g(u) = e^u$ é infinitamente derivável,
+assim como a função $h(x) = -1/|x|$.
+
+Como $f(x)$ para $x \neq 0$ é uma composição de funções infinitamente deriváveis, ela também é infinitamente
+derivável em todo seu domínio.
+
+\subsection{Derivabilidade para $x = 0$}
+
+Este é o ponto crucial da análise. É necessário utilizar a definição de derivada para verificar se
+a função é derivável nesse ponto, e em seguida, provar por indução que todas as derivadas de ordem superior
+também existam.
+
+\subsubsection{Primeira derivada: $f'(0)$}
+
+Usamos a definição da derivada como limite:
+
+\[f'(0) = \lim_{h\to0} \frac{f(h) - f(0)}{h}\]
+
+Substituindo os valores da função:
+
+\[f'(0) = \lim_{h\to0} \frac{e^{\frac{-1}{|h|}} - 0}{h} = \lim_{h\to0} \frac{e^{\frac{-1}{|h|}}}{h}\]
+
+Este é um limite indeterminado, da forma $\frac{0}{0}$. Para resolvê-lo, realizaremos uma troca de variável.
+Considerando $h\to0$, e adotando $u = 1/h$, temos que nesse caso, $u\to+\infty$, como pode ser visto abaixo:
+
+\[\lim_{h\to0} \frac{e^{\frac{1}{|h|}}}{h} = \lim_{u\to+\infty} u\cdot e^{-u} = \lim_{u+\infty}\frac{u}{e^u}\]
+
+Essa é uma indeterminação do tipo $\frac{\infty}{\infty}$, e portanto, pode ser aplicada a regra de
+L'Hôpital:
+
+\[lim_{u\to+\infty} \frac{(u)'}{(e^u)'} = \lim_{u\to+\infty} \frac{1}{\infty} = 0\]
+
+Analogamente, o limite para $h\to0^-$ pode ser calculado e também resulta em 0. Como os limites
+laterais existem e são iguais, conclui-se que: $f(0)' = 0$
+
+\subsubsection{Derivadas de ordem superior em $x = 0$}
+
+A n-ésima derivada de $f(x)$ terá a forma geral:
+
+\[f^{(n)}(x) = P_n(\frac{1}{x}e^{\frac{-1}{|x|}})\]
+
+Onde $P_n$ é um polinômio. Isso acontece pois após cada derivação, pela regra da
+cadeia e do produto, será introduzido termos que são potências de $1/x$
+
+Agora, será provado por indução matemática que $f^{(n)}(0) = 0$, para todo $n \geq 0$
+
+Considere um número $k \geq 0$. A derivada da função $f$ da ordem $k + 1$ será:
+
+\[f^{k + 1}(0) = \lim_{h\to0} \frac{P_k (\frac{1}{h})e^{\frac{-1}{h}}}{h}\]
+
+Note que a relação acima leva em conta nossa hipótese de que $f^k(0) = 0$, e a forma geral da k-ésima
+derivada para $h\neq0$.
+
+Fazendo novamente a substituição de $u = \frac{1}{h}$, também considerando $h\to0^+$:
+
+\[lim_{u\to+\infty} u\cdot P_k(u)\cdot e^{-u} = \lim_{u\to+\infty} \frac{u \cdot P_k(u)}{e^u}\]
+
+O termo no numerador é também um polinômio em u, assim a relaçao acima se trada de um limite polinomial
+dividido por uma função exponencial:
+
+\[lim_{u\to+\infty} \frac{Q(u)}{e^u}\]
+
+Uma função exponencial cresce muito mais rápido do que qualquer polinômio. Aplicando a regra de L'Hopital
+repetidamente, eventualmente o numerador se tornará uma constante, enquanto do denominador permanecerá
+$e^u$. Assim, o limite será da forma:
+
+\[lim_{u\to+\infty} \frac{C}{e^u} = 0\]
+
+Portanto, temos que $f^{k+1}(0) = 0$, para qualquer valor de $k$, provando assim que essa função é 
+infinitamente derivável.
