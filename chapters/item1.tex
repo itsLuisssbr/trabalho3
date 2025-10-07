@@ -38,6 +38,44 @@ $|f(x) - o < \varepsilon$
     \item substituindo essa desigualdade na nossa expressão, obtemos
     \[|x|\cdot\sin{\frac{1}{x}} \leq |x|\cdot1 = |x|\]
     \item O nosso objetico é fazer com que $|f(x) - 0 < \varepsilon$. Já foi mostrado que
-    $|f(x) - 0| \leq |x|$. Para isso, basta garantir que $|x| < \varepsilon$
-    \item 
+    $|f(x) - 0| \leq |x|$. Para isso, basta garantir que $|x| < \varepsilon$.
+    \item Pode-se então escolher $\delta = \varepsilon$. Assim, se assumirmos que 
+    $0 < |x| < \delta$, teremos $|x| < \varepsilon$. \\
+    \\
+    E como $|f(x) - 0| \leq |x|$, concluímos que:
+    \[|f(x) - 0| < \varepsilon\]
 \end{enumerate}
+
+Portanto, o limite existe e é 0. Como $\lim_{x\to0} = 0$ e $f(0) = 0$, a função é contínua em $x = 0$.
+
+
+%-------------------------------------------------------------
+
+\subsection{Derivabilidade em x = 0}
+
+Para verificar se a função é derivável em $x = 0$, precisamos calcular sua derivada a partir da definição
+de limite:
+\[f'(0) = \lim_{h\to0} \frac{f(0 + h) - f(0)}{h}\]
+
+Substituindo os valores, temos que:
+
+\begin{align*}
+    f'(0) &= \lim_{h\to0} \frac{h\cdot\sin{\frac{1}{h}} - 0}{h} \\
+    f'(0) &= \lim_{h\to0} \frac{h\cdot\sin{\frac{1}{h}}}{h} \\
+    f'(0) &= \lim_{h\to0} \sin{\frac{1}{h}}
+\end{align*}
+
+Note que, na última relação, chegamos a um limite da forma $\sin{\frac{1}{x}}$, com x tendendo a 0.
+Esse limite não existe, e em decorrência disso, conclui-se que a função do enunciado não é derivável em
+ $x = 0$.
+
+ % -------------------------
+
+ \subsection{Gráfico da função}
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{src/ex11}
+    \caption{Gráfico da função f(x)}
+ \end{figure}
+
